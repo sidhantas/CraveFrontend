@@ -14,7 +14,8 @@ import {
 import { useState } from "react";
 import { io } from "socket.io-client";
 import { CardProps } from "./src/components/Card";
-import {SERVER_IP} from "react-native-dotenv";
+//@ts-ignore
+import { SERVER_IP } from "react-native-dotenv"; // this module doesn't work too well with TypeScript
 
 const Stack = createNativeStackNavigator();
 
