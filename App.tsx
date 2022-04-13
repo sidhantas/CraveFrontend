@@ -14,6 +14,7 @@ import {
 import { useState } from "react";
 import { io } from "socket.io-client";
 import { CardProps } from "./src/components/Card";
+import {SERVER_IP} from "react-native-dotenv";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +22,7 @@ export default function App() {
   const [role, setRole] = useState<RoleTypes>("None");
   const [cardData, setCardData] = useState<Array<CardProps>>([]);
   const [sessionID, setSessionID] = useState<string>("");
-  const socket = io("ws://3b13-104-183-243-37.ngrok.io");
+  const socket = io(SERVER_IP);
   const [winningRestaurant, setWinningRestaurant] = useState<string>("");
 
   let GlobalContextProps: GlobalContextInterface = {
